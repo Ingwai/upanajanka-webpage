@@ -1,0 +1,443 @@
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+	/**
+     * COLORS
+     */
+	--color-background: #d8f2ee;
+	--color-primary: #129e85;
+	--color-secondary: #6fdbc8;
+	--color-third: #a7f0e4;
+	--white: hsla(0, 0%, 100%, 1);
+	--black: hsla(0, 0%, 0%, 1);
+
+	/**
+     * TYPOGRAPHY
+     */
+
+	/* font-family */
+	--fontFamily-nav_menu: 'Poppins';
+	--fontFamily-main: 'Josefin Sans', sans-serif;
+	--fontFamily-title_oferta: 'BernhardFashion BT', sans-serif;
+
+	/* font-size */
+	--fontSize-menu: 2.2rem;
+	--fontSize-navbar: clamp(1.5rem, 1.6vw, 1.8rem);
+	--fontSize-hero_title: clamp(3rem, 1.6vw, 8rem);
+	--fontSize-hero_text: clamp(1.6rem, 1.6vw, 2.4rem);
+	--fontSize-title_h2: clamp(4rem, 5vw, 8rem);
+	--fontSize-title_h3: clamp(1.6rem, 1.6vw, 3rem);
+	--fontSize-text_oferta: clamp(1rem, 1.6vw, 1.8rem);
+
+	/* font-weight */
+	--weight-light: 300;
+	--weight-regular: 500;
+	--weight-bold: 700;
+
+	/* line-height */
+	--lineHeight-1: 1em;
+	--lineHeight-2: 1.3em;
+	--lineHeight-3: 1.5em;
+
+	/* letter-spacing */
+	--letterSpacing-1: 0.15em;
+	--letterSpacing-2: 0.4em;
+	--letterSpacing-3: 0.2em;
+	/**
+     * SPACING
+     */
+	--section-space: 70px;
+
+	/**
+     * SHADOW
+     */
+
+	--shadow: 2px 3px 6px 0px hsla(0, 0%, 0%, 0.2);
+
+	/**
+     * BORDER RADIUS
+     */
+
+	--radius-20: 2rem;
+	--radius-circle: 50%;
+
+	/**
+     * TRANSITION
+     */
+	--transition-1: 250ms ease;
+	--transition-2: 500ms ease;
+	--transition-3: 1000ms ease;
+}
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+li {
+	list-style: none;
+}
+
+a,
+img,
+data,
+span,
+button {
+	display: block;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	background: none;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--black);
+}
+
+/* body.loaded {
+	overflow: overlay;
+}
+
+body.nav-active {
+	overflow: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--gold-crayola);
+} */
+
+/* BACKGROUND  */
+.main_window {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.img-box {
+	z-index: -10;
+	opacity: 0.7;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	/* 1 obazek */
+	/* background-image: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.6)),
+    url('/assets/images/natalya-zaritskaya-SIOdjcYotms-unsplash.jpg');
+	background-size: 130%;
+	background-position-y: 50%; */
+
+	/* 1 obazek */
+	/* background-image: linear-gradient(to right, rgba(15, 15, 15, 0.4), rgba(0, 0, 0, 0.6)); */
+	background-image: url('/assets/images/hero-1.jpg');
+
+	/* 2 obazek */
+	/* background-image: url('/assets/images/hero-2.jpg'); */
+
+	/* 3 obazek */
+	/* background-image: url('/assets/images/hero-3.jpg'); */
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+/* TOP BAR */
+
+.topbar {
+	width: 1370px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	border-bottom-left-radius: 2rem;
+	border-bottom-right-radius: 2rem;
+	background-color: var(--color-secondary);
+	height: 5rem;
+	font-family: var(--fontFamily-nav_menu);
+	font-size: var(--fontSize-navbar);
+	color: var(--white);
+	box-shadow: var(--shadow);
+}
+
+/* .topbar {
+	display: none;
+} */
+
+.topbar .container {
+	width: 1300px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.topbar-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.topbar-item span {
+	margin: 0 1rem;
+	text-align: center;
+}
+
+.topbar-item .icon img {
+	width: 100%;
+}
+
+/* HEADER AND MENU */
+
+.header {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+}
+
+.header .container {
+	margin: 0 auto;
+	width: 1300px;
+	height: 10rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header .logo a {
+	display: flex;
+	align-items: center;
+}
+
+.header .logo a .u img {
+	width: 100%;
+}
+
+.header .logo a .bezpieczenia img {
+	margin-left: 0.5rem;
+	height: 100%;
+}
+
+.navbar {
+	width: 90rem;
+	font-family: var(--fontFamily-nav_menu);
+	font-size: var(--fontSize-menu);
+	font-weight: var(--weight-light);
+	color: var(--white);
+}
+
+.navbar-list {
+	display: flex;
+	justify-content: end;
+	gap: 10rem;
+}
+
+.navbar-item a {
+	padding: 0.5rem 1.5rem;
+	border: 1px solid transparent;
+	border-radius: 2rem;
+	transition: var(--transition-1);
+}
+
+.navbar-item a:hover {
+	border: 1px solid var(--white);
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: var(--radius-20);
+}
+
+/* SECTION HERO */
+
+.hero {
+	margin: 10rem auto 0 auto;
+	width: 130rem;
+	font-family: var(--fontFamily-main);
+	line-height: 4.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+}
+
+.hero h1 {
+	font-size: var(--fontSize-hero_title);
+	color: var(--white);
+	margin-top: 6rem;
+}
+
+.hero .desc {
+	width: 45%;
+	font-family: var(--fontFamily-main);
+	font-size: var(--fontSize-hero_text);
+	font-weight: var(--weight-light);
+}
+.hero .desc p {
+	margin: 3rem 0;
+	text-indent: 4rem;
+	line-height: var(--lineHeight-3);
+	color: var(--white);
+}
+
+/* SECTION OFERTA */
+
+.oferta {
+	width: 100%;
+	padding-bottom: 10rem;
+	background-color: var(--color-background);
+}
+
+.section_title {
+	margin: 0rem auto;
+	width: 130rem;
+	height: 20rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.section_title h2 {
+	text-align: center;
+	font-family: var(--fontFamily-title_oferta);
+	font-size: var(--fontSize-title_h2);
+	font-weight: var(--weight-light);
+	color: var(--color-primary);
+}
+
+.cards_box {
+	margin: 0rem auto;
+	width: 130rem;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+	gap: 8rem;
+}
+
+.card {
+	width: 100%;
+	position: relative;
+}
+
+.card:nth-child(2n-1)::before {
+	content: '';
+	width: 0.2rem;
+	height: 15.2rem;
+	background-color: var(--color-primary);
+	position: absolute;
+	left: -2rem;
+	bottom: -5rem;
+}
+
+.card:nth-child(2n-1)::after {
+	content: '';
+	width: 22rem;
+	height: 0.2rem;
+	background-color: var(--color-primary);
+	position: absolute;
+	left: -5rem;
+	bottom: -2rem;
+}
+
+.card:nth-child(n-1)::before {
+	content: '';
+	width: 0.2rem;
+	height: 15.2rem;
+	background-color: var(--color-primary);
+	position: absolute;
+	right: -2rem;
+	bottom: -5rem;
+}
+
+.card:nth-child(n-1)::after {
+	content: '';
+	width: 22rem;
+	height: 0.2rem;
+	background-color: var(--color-primary);
+	position: absolute;
+	right: -5rem;
+	bottom: -2rem;
+}
+
+.card img {
+	width: 100%;
+}
+
+.card .card_title {
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 5rem;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card .card_title h3 {
+	text-align: center;
+	font-family: var(--fontFamily-main);
+	font-size: var(--fontSize-title_h3);
+	font-weight: var(--weight-light);
+	color: var(--white);
+}
+
+.card .back {
+	opacity: 0;
+	width: 0%;
+	height: 0%;
+	position: absolute;
+	top: 0;
+	background-color: var(--color-background);
+	padding: 1rem 5rem;
+	font-family: var(--fontFamily-main);
+	font-size: var(--fontSize-text_oferta);
+	font-weight: var(--weight-light);
+	transition: var(--transition-1);
+}
+
+.card:hover .back {
+	opacity: 0.95;
+	width: 100%;
+	height: 100%;
+}
+
+.card .back ul li {
+	list-style: none;
+	line-height: var(--lineHeight-2);
+}
+
+.card .back ul li::before {
+	content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+	color: var(--color-primary); /* Change the color */
+	font-weight: bold; /* If you want it to be bold */
+	display: inline-block; /* Needed to add space between the bullet and the text */
+	width: 1em; /* Also needed for space (tweak if needed) */
+	margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.card .back > p {
+	padding-top: 2rem;
+	line-height: var(--lineHeight-2);
+}
