@@ -4,6 +4,7 @@
       .cls-1 {
         font-size: 26px;
         font-family: MyriadPro-Regular, Myriad Pro;
+        fill: white;
       }
     </style>
   </defs>
