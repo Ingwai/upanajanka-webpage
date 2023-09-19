@@ -1,28 +1,17 @@
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
-
 :root {
-	/**
-     * COLORS
-     */
 	--color-background: #d8f2ee;
 	--color-primary: rgb(18, 158, 133);
 	--color-secondary: #6fdbc8;
 	--color-third: #a7f0e4;
+	--color-header: rgba(11, 92, 77, 0.9);
+	--color-footer: rgba(0, 0, 0, 0.65);
 	--white: hsla(0, 0%, 100%, 1);
 	--black: hsla(0, 0%, 0%, 1);
 
-	/**
-     * TYPOGRAPHY
-     */
-
-	/* font-family */
 	--fontFamily-nav_menu: 'Poppins';
 	--fontFamily-main: 'Josefin Sans', sans-serif;
 	--fontFamily-title_oferta: 'BernhardFashion BT', sans-serif;
 
-	/* font-size */
 	--fontSize-menu: 2.2rem;
 	--fontSize-navbar: clamp(1.5rem, 1.6vw, 1.8rem);
 	--fontSize-hero_title: clamp(3rem, 1.6vw, 8rem);
@@ -31,45 +20,25 @@
 	--fontSize-title_h3: clamp(1.6rem, 1.6vw, 3rem);
 	--fontSize-text_oferta: clamp(1rem, 1.6vw, 1.8rem);
 
-	/* font-weight */
 	--weight-light: 300;
 	--weight-regular: 500;
 	--weight-bold: 700;
 
-	/* line-height */
 	--lineHeight-1: 1em;
 	--lineHeight-2: 1.3em;
 	--lineHeight-3: 1.5em;
 
-	/*
-     * SPACING
-     */
-	--section-space: 70px;
-
-	/**
-     * SHADOW
-     */
-
 	--shadow: 2px 3px 6px 0px hsla(0, 0%, 0%, 0.2);
-
-	/**
-     * BORDER RADIUS
-     */
 
 	--radius-20: 2rem;
 	--radius-circle: 50%;
 
-	/**
-     * TRANSITION
-     */
 	--transition-1: 250ms ease;
 	--transition-2: 500ms ease;
 	--transition-3: 1000ms ease;
 }
 
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
+/* RESET */
 
 *,
 *::before,
@@ -125,15 +94,6 @@ body {
 	background-color: var(--color-primary);
 }
 
-/* body.loaded {
-	overflow: overlay;
-}
-
-body.nav-active {
-	overflow: hidden;
-}
-} */
-
 /* BACKGROUND  */
 .main_window {
 	width: 100%;
@@ -150,10 +110,10 @@ body.nav-active {
 
 	/* 1 obazek */
 	/* background-image: linear-gradient(to right, rgba(15, 15, 15, 0.4), rgba(0, 0, 0, 0.6)); */
-	background-image: url('./assets/images/hero-1.jpg');
+	/* background-image: url('./assets/images/hero-1.jpg'); */
 
 	/* 2 obazek */
-	/*  background-image: url('./assets/images/hero-2.jpg'); */
+	background-image: url('./assets/images/hero-2.jpg');
 
 	/* 3 obazek */
 	/* background-image: url('./assets/images/hero-3.jpg'); */
@@ -177,10 +137,6 @@ body.nav-active {
 	color: var(--white);
 	box-shadow: var(--shadow);
 }
-
-/* .topbar {
-	display: none;
-} */
 
 .topbar .container {
 	width: 1300px;
@@ -218,7 +174,7 @@ body.nav-active {
 
 .header.active {
 	padding-block: 0;
-	background: rgba(11, 92, 77, 0.9);
+	background: var(--color-header);
 	box-shadow: var(--shadow);
 }
 
@@ -267,12 +223,22 @@ body.nav-active {
 }
 
 .navbar-item a:hover {
-	border: 1px solid var(--white);
+	/* border: 1px solid var(--white); */
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: var(--radius-20);
+	animation: pulse 1s ease infinite;
 }
 
-/* SECTION HERO */
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 var(--white);
+	}
+	100% {
+		box-shadow: 0 0 0 20px transparent;
+	}
+}
+
+/* SECTION O NAS */
 
 .hero {
 	margin: 5rem auto;
@@ -378,6 +344,7 @@ body.nav-active {
 	font-size: var(--fontSize-title_h2);
 	font-weight: var(--weight-light);
 	color: var(--color-primary);
+	text-shadow: 4px 4px 0px rgb(255, 255, 255), 6px 10px 5px rgb(165, 163, 163, 0.3);
 }
 
 .cards_box {
@@ -460,9 +427,18 @@ body.nav-active {
 	right: -2rem;
 }
 
+.card .image {
+	width: 100%;
+	overflow: hidden;
+}
 .card img {
 	width: 100%;
 	/* width: 66vh; */
+	transition: 0.4s ease;
+}
+
+.card:hover img {
+	scale: 1.05;
 }
 
 .card .card_title {
@@ -512,11 +488,11 @@ body.nav-active {
 
 .card .back ul li::before {
 	content: '\2022'; /* Add content: \2022 is the CSS Code/unicode for a bullet */
-	color: var(--color-primary); /* Change the color */
-	font-weight: bold; /* If you want it to be bold */
-	display: inline-block; /* Needed to add space between the bullet and the text */
-	width: 1em; /* Also needed for space (tweak if needed) */
-	margin-left: -1em; /* Also needed for space (tweak if needed) */
+	color: var(--color-primary);
+	font-weight: bold;
+	display: inline-block;
+	width: 1em;
+	margin-left: -1em;
 }
 
 .card .back > p {
@@ -561,7 +537,7 @@ body.nav-active {
 	width: 100%;
 	min-height: 100vh;
 	padding-bottom: 10rem;
-	background-color: var(--color-background);
+	background: radial-gradient(circle, rgba(151, 249, 232, 1) 0%, rgba(222, 248, 243, 1) 50%, rgb(96, 241, 212) 100%);
 	position: relative;
 }
 
@@ -617,7 +593,9 @@ body.nav-active {
 	color: var(--color-secondary);
 }
 
-.item-content .text {
+.item-content .text,
+.autor,
+.link {
 	font-size: var(--fontSize-text_oferta);
 	font-family: var(--fontFamily-main);
 	font-weight: var(--weight-light);
@@ -628,24 +606,171 @@ body.nav-active {
 .item-content .autor {
 	padding: none;
 	text-align: right;
-	font-size: var(--fontSize-text_oferta);
-	font-family: var(--fontFamily-main);
-	font-weight: var(--weight-light);
-	line-height: var(--lineHeight-3);
 }
 
 .item-content .link {
-	font-size: var(--fontSize-text_oferta);
-	font-family: var(--fontFamily-main);
 	font-weight: var(--weight-regular);
-	line-height: var(--lineHeight-3);
 	text-align: center;
 	color: var(--color-primary);
 }
 
-/*-----------------------------------*\
- * #GO TO TOP
-\*-----------------------------------*/
+/* SECTION NASZE BIURA */
+.nasze_biura {
+	position: relative;
+	padding-top: 10rem;
+	width: 100%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-image: url('./assets/images/family-g62b83789f_1920.jpg');
+}
+
+.nasze_biura .box {
+	width: 130rem;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nasze_biura .overlay_box {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+}
+
+.section_title .title {
+	z-index: 20;
+}
+
+/* tab */
+
+.nasze_biura .container {
+	width: 130rem;
+	margin: 0 auto;
+}
+
+.tab-container {
+	background: rgba(255, 255, 255, 0.4);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tab-btn-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tab-btn {
+	background-color: var(--white);
+	min-width: 32.5rem;
+	border: 1px ridge var(--color-secondary);
+	padding-block: 1.5rem;
+	border-bottom-left-radius: 2.5rem;
+	border-bottom-right-radius: 2.5rem;
+	box-shadow: var(--shadow);
+	transition: var(--transition-2);
+	font-family: var(--fontFamily-main);
+	font-size: var(--fontSize-menu);
+	color: var(--color-primary);
+}
+
+.tab-btn:is(:hover, :focus-visible) {
+	background: var(--color-background);
+	color: var(--black);
+}
+
+.tab-btn.active {
+	background: var(--color-secondary);
+	color: var(--black);
+}
+
+.tab-content {
+	display: none;
+	padding: 3rem 5rem;
+}
+
+.tab-content.active {
+	display: block;
+	animation: fade 0.5s linear forwards;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.tab-content .grid-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.biuro-data {
+	width: 30rem;
+	min-height: 0;
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: 3rem 1fr;
+	grid-template-rows: minmax(0, max-content) minmax(0, max-content) minmax(0, max-content);
+	align-items: start;
+	justify-content: center;
+}
+
+.icon-address,
+.icon-hour,
+.icon-tel {
+	display: flex;
+	justify-content: center;
+}
+.biuro-adres,
+.biuro-hour,
+.biuro-tel p {
+	font-family: var(--fontFamily-main);
+	font-size: var(--fontSize-text_oferta);
+	font-weight: var(--weight-light);
+	border-bottom: 1px solid var(--color-primary);
+	padding-bottom: 2rem;
+}
+
+.biuro-adres p:first-child,
+.biuro-hour p:nth-child(2n-1),
+.biuro-tel p {
+	font-weight: var(--weight-regular);
+}
+
+.biuro-tel p {
+	border-bottom: none;
+}
+
+.biuro-map iframe {
+	width: calc(100vh - 5rem);
+	height: 35rem;
+	background-color: var(--white);
+	border: 1px solid var(--color-third);
+}
+
+footer {
+	bottom: 0;
+	position: absolute;
+	width: 100%;
+	height: 10rem;
+	background: var(--color-footer);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3.5px);
+}
+
+/* GO TO TOP */
 
 .go-top {
 	position: fixed;
@@ -658,7 +783,7 @@ body.nav-active {
 	font-size: 25px;
 	color: var(--color-primary);
 	border: 2px solid var(--color-primary);
-	border-radius: 20%;
+	border-radius: var(--radius-circle);
 	opacity: 0;
 	pointer-events: none;
 	transform: translateY(10px);
