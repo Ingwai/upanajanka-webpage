@@ -60,3 +60,37 @@ const filterContent = function () {
 };
 
 addEventOnElements(tabBtns, 'click', filterContent);
+
+// LAZY LOADING
+
+const imageDivs = document.querySelectorAll('.image');
+
+imageDivs.forEach(imageDiv => {
+	const img = imageDiv.querySelector('img');
+	function loaded() {
+		imageDiv.classList.add('loaded');
+	}
+
+	if (img.complete) {
+		loaded();
+	} else {
+		img.addEventListener('load', loaded);
+	}
+});
+
+// SLIDER HERO
+
+let index = 0;
+
+function slider() {
+	let slides = document.querySelectorAll('.hero_slide');
+
+	slides.forEach(slide => (slide.style.opacity = '0'));
+	index++;
+	index > slides.length ? (index = 1) : '';
+	console.log(slides, index, slides.length);
+	slides[index - 1].style.opacity = '1';
+	setTimeout(slider, 25000);
+}
+
+slider();
