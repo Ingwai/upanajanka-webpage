@@ -70,8 +70,8 @@
                         <img src="assets/images/icon-awesome-phone.svg"
                             alt="ikona słuchawki telefonu stacjonarnego"></img>
                     </div>
-                    <span class="span"> 41 362 17 82</span>
-                    <span class="span"> 41 343 27 49</span>
+                    <a href="tel:41 362 17 82"> 41 362 17 82</a>
+                    <a href="tel:41 343 27 49"> 41 343 27 49</a>
                 </div>
 
                 <div class="topbar-item item-3">
@@ -79,24 +79,21 @@
                         <img src="assets/images/icon-metro-mobile.svg" alt="ikona telefonu komórkowego"></img>
                     </div>
 
-                    <span class="span"> 604 084 226</span>
-                    <span class="span"> 728 808 122</span>
-                    <span class="span"> 699 843 174</span>
+                    <a href="tel:604 084 226"> 604 084 226</a>
+                    <a href="tel:728 808 122"> 728 808 122</a>
+                    <a href="tel:699 843 174"> 699 843 174</a>
                 </div>
 
-                <a href="mailto:upanajanka@wp.pl" class="topbar-item">
+                <div class="topbar-item">
                     <div class="icon">
                         <img src="assets/images/icon-material-email.svg" alt="ikona emaila"></img>
                     </div>
-
-                    <span class="span">upanajanka@wp.pl</span>
-                </a>
+                    <a href="mailto:upanajanka@wp.pl">upanajanka@wp.pl</a>
+                </div>
             </div>
         </div>
 
-
         <!--  - #HEADER  -->
-
         <header class="header">
 
             <div class="container">
@@ -109,69 +106,62 @@
 
 
                 <!-- NAVBAR -->
-                <nav class="navbar" data-navbar>
-
-                    <!--  BUTTON close-->
-                    <!--                     
-                    <button class="close-btn" aria-label="close menu" data-nav-toggler>
-                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-                    </button> -->
-
-                    <a href="#" class="logo_sidebar" aria-label="logo firmy Ubezpieczenia u Pana Janka">
-                        <!-- tu logo -->
-                    </a>
+                <nav class="navbar">
                     <ul class="navbar-list">
 
                         <li class="navbar-item">
-                            <a href="#o_nas" class="navbar-link hover-active"
-                                aria-label="link odsłyłający do miejsca o nas">O NAS
+                            <a href="#o_nas" class="navbar-link" aria-label="link odsłyłający do miejsca o nas">O NAS
                             </a>
                         </li>
 
                         <li class="navbar-item">
-                            <a href="#oferta" class="navbar-link hover"
+                            <a href="#oferta" class="navbar-link"
                                 aria-label="link odsyłający do miejsca z ofertą firmy">OFERTA</a>
                         </li>
 
                         <li class="navbar-item">
-                            <a href="#opinie" class="navbar-link hover"
+                            <a href="#opinie" class="navbar-link"
                                 aria-label="link odsyłający do miejsca z opiniami klientów">OPINIE</a>
                         </li>
 
                         <li class="navbar-item">
-                            <a href="#nasze_biura" class="navbar-link hover"
+                            <a href="#nasze_biura" class="navbar-link"
                                 aria-label="link odsyłający do miejsca z adresami naszych biur">NASZE BIURA</a>
                         </li>
 
                     </ul>
-
-
-                    <!-- navbar side telefony i email -->
-                    <!-- <div class="text-center">
-                        <p class="headline-1 navbar-title">Nasze telefony</p>
-
-                        <p class="navbar-tel">41 362 17 82</p>
-                        <p class="navbar-tel">41 343 27 49</p>
-                        <p class="navbar-tel">604 084 226</p>
-                        <p class="navbar-tel">728 808 122</p>
-                        <p class="navbar-tel">699 843 174</p>
-
-                        <a href="mailto:upanajanka@wp.pl" class="sidebar-link">upanajanka@wp.pl</a>
-
-                    </div> -->
-
                 </nav>
+
+                <div class="navbar-mini">
+                    <ul class="navbar-mini-list">
+                        <li>
+                            <a href="#o_nas" aria-label="link odsłyłający do miejsca o nas">O NAS
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#oferta" aria-label="link odsyłający do miejsca z ofertą firmy">OFERTA</a>
+                        </li>
+
+                        <li>
+                            <a href="#opinie" aria-label="link odsyłający do miejsca z opiniami klientów">OPINIE</a>
+                        </li>
+
+                        <li>
+                            <a href="#nasze_biura" aria-label="link odsyłający do miejsca z adresami naszych biur">NASZE
+                                BIURA</a>
+                        </li>
+
+                    </ul>
+                </div>
 
                 <!-- button open do owierania navbaru -->
 
-                <!-- <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <button class="nav-open-btn" aria-label="open menu">
                     <span class="line line-1"></span>
                     <span class="line line-2"></span>
                     <span class="line line-3"></span>
-                </button> -->
-
-                <!-- nakładka -->
-                <!-- <div class="overlay" data-nav-toggler data-overlay></div> -->
+                </button>
 
             </div>
         </header>
@@ -179,27 +169,28 @@
         <!-- HERO SECTION -->
 
         <section class="hero">
+            <div class="hero_text_box">
+                <h1>
+                    <span>CHCESZ SIĘ UBEZPIECZYĆ? DOBRZE TRAFIŁEŚ!</span>
+                </h1>
 
-            <h1>
-                <span>CHCESZ SIĘ UBEZPIECZYĆ?</span>
-                <span>DOBRZE TRAFIŁEŚ!</span>
-            </h1>
+                <div class="desc">
+                    <p>Od ponad 15 lat oferujemy ubezpieczenia wyłącznie renomowanych towarzystw. Ubezpieczenia
+                        "u&nbsp;Pana
+                        Janka" to gwarancja dobrze dobranej oferty, dopasowanej do państwa potrzeb.</p>
 
-            <div class="desc">
-                <p>Od ponad 15 lat oferujemy ubezpieczenia wyłącznie renomowanych towarzystw. Ubezpieczenia
-                    "u&nbsp;Pana
-                    Janka" to gwarancja dobrze dobranej oferty, dopasowanej do państwa potrzeb.</p>
+                    <p>Nasi pracownicy kompetentnie odpowiedzą na państwa pytania i&nbsp;wyjaśnią istotne kwestie
+                        dotyczące
+                        polisy.
+                        Zawsze staramy się przypomnieć o kończących się polisach tak, aby w&nbsp;każdym momencie byli
+                        państwo
+                        objęci ochroną ubezpieczyciela.</p>
 
-                <p>Nasi pracownicy kompetentnie odpowiedzą na państwa pytania i&nbsp;wyjaśnią istotne kwestie
-                    dotyczące
-                    polisy.
-                    Zawsze staramy się przypomnieć o kończących się polisach tak, aby w&nbsp;każdym momencie byli
-                    państwo
-                    objęci ochroną ubezpieczyciela.</p>
-
-                <p>W przypadku nieprzewidzianych zdarzeń objętych ubezpieczeniem doradzimy jakie działania należy
-                    podjąć i&nbsp;które dokumenty wypełnić.</p>
+                    <p>W przypadku nieprzewidzianych zdarzeń objętych ubezpieczeniem doradzimy jakie działania należy
+                        podjąć i&nbsp;które dokumenty wypełnić.</p>
+                </div>
             </div>
+            <div class="image_hero"> </div>
 
         </section>
 
@@ -898,17 +889,19 @@
                     <a href="#opinie">OPINIE</a>
                     <a href="#nasze_biura">NASZE BIURA</a>
                 </div>
-                <div class="footer_phone">
-                    <div class="icon">
-                        <img src="./assets/images/icon-metro-mobile.svg" alt="ikona telefonu komórkowego">
+                <div class="footer_box">
+                    <div class="footer_phone">
+                        <div class="icon">
+                            <img src="./assets/images/icon-metro-mobile.svg" alt="ikona telefonu komórkowego">
+                        </div>
+                        <a href="tel:604 084 226">604 084 226</a>
                     </div>
-                    <p>604 084 226</p>
-                </div>
-                <div class="footer_email">
-                    <div class="icon">
-                        <img src="./assets/images/icon-material-email.svg" alt="ikona emaila">
+                    <div class="footer_email">
+                        <div class="icon">
+                            <img src="./assets/images/icon-material-email.svg" alt="ikona emaila">
+                        </div>
+                        <a href="mailto:upanajanka@wp.pl">upanajanka@wp.pl</a>
                     </div>
-                    <a href="mailto:upanajanka@wp.pl">upanajanka@wp.pl</a>
                 </div>
             </div>
             <div class="footer_copyright">

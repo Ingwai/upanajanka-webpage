@@ -1,3 +1,19 @@
+//  navbar toggle
+const openNavBtn = document.querySelector('.nav-open-btn');
+const navbarMini = document.querySelector('.navbar-mini');
+
+openNavBtn.addEventListener('click', () => {
+	navbarMini.classList.toggle('active');
+	openNavBtn.classList.toggle('active');
+});
+
+navbarMini.addEventListener('click', () => {
+	navbarMini.classList.remove('active');
+	openNavBtn.classList.toggle('active');
+});
+
+// oferta card
+
 const cards = document.querySelectorAll('.card');
 
 cards.forEach((card, index) => {
@@ -85,12 +101,15 @@ let index = 0;
 function slider() {
 	let slides = document.querySelectorAll('.hero_slide');
 
-	slides.forEach(slide => (slide.style.opacity = '0'));
+	slides.forEach(slide => {
+		slide.style.opacity = '0';
+		slide.style.scale = '0.8';
+	});
 	index++;
 	index > slides.length ? (index = 1) : '';
-	console.log(slides, index, slides.length);
 	slides[index - 1].style.opacity = '1';
-	setTimeout(slider, 25000);
+	slides[index - 1].style.scale = '1';
+	setTimeout(slider, 15000);
 }
 
 slider();
